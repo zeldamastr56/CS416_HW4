@@ -1,0 +1,22 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}
+    Delete-Confirm
+{% endblock %}
+
+{% block body %}
+
+    <div class="card">
+      <h5 class="card-header">Delete Task</h5>
+      <div class="card-body">
+          <form class="p-4" method="post" action="{% url 'delete' task.id %}">
+              {% csrf_token %}
+              <h4 class="md-4">Are you sure that you want to delete <span class="alert alert-danger p-1">{{ task.task_item }}</span>?</h4>
+              <a href="{% url 'index' %}" class="btn btn-info"><i class="fas fa-arrow-left"></i> Go Back</a>
+              <button type="submit" class="btn btn-success">Yes, I am sure!</button>
+          </form>
+      </div>
+    </div>
+
+
+{% endblock %}

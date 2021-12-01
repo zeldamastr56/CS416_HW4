@@ -1,0 +1,38 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}
+    Task Form
+{% endblock %}
+
+{% block body %}
+
+    <div class="card">
+      <div class="card-header">Update Task</div>
+      <div class="card-body">
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">Task Item</div>
+                    <div class="col-4 form-check-label">Completed</div>
+                </div>
+                <div class="row">
+                    <div class="col-8">{{ form.task_item }}</div>
+                    <div class="col-4">
+                        <div class="mx-3 form-check form-switch">{{ form.complete }}</div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="my-3">
+                        <a href="{% url 'index' %}" class="btn btn-info"><i class="fas fa-arrow-left"></i> Go Back</a>
+                        <button type="reset" class="btn btn-secondary"> Reset</button>
+                        <button type="submit" class="btn btn-primary"> Update</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

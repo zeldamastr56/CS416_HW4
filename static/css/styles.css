@@ -1,0 +1,15 @@
+.input {
+    width: 100%;
+}
+
+.submit-input {
+    width: 100%;
+}
+
+#id_task_item {
+    width: 100%;
+}
+
+body {
+    background-color: #fafafa;
+}
